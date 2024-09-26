@@ -222,9 +222,10 @@ func (service userService) ReloadToken() error {
 
 		if authorization.Remember {
 			// 记住登录有效期两周
-			cache.TokenManager.Set(token, authorization, cache.RememberMeExpiration)
+			cache.TokenManager.Set(token, authorization, cache.NoExpiration)
 		} else {
-			cache.TokenManager.Set(token, authorization, cache.NotRememberExpiration)
+			// todo 设置为不过期 前端只需要加上 token即可访问
+			cache.TokenManager.Set(token, authorization, cache.NoExpiration)
 		}
 		log.Debug("重新加载用户授权Token", log.String("username", user.Nickname), log.String("token", token))
 	}

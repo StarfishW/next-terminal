@@ -34,6 +34,9 @@ const Guacd = () => {
 
     let [searchParams] = useSearchParams();
     let assetId = searchParams.get('assetId');
+    let token = searchParams.get('token');
+    // console.log('token: ' + token)
+    localStorage.setItem('X-Auth-Token',token)
     let assetName = searchParams.get('assetName');
     let protocol = searchParams.get('protocol');
     let width = searchParams.get('width');

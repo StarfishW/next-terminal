@@ -6,3 +6,4 @@ just do go dashboard
 ```shell
 npm install
 ```
+no

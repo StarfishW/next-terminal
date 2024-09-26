@@ -142,9 +142,9 @@ func (api AccountApi) LoginSuccess(loginAccount dto.LoginAccount, user model.Use
 
 	if authorization.Remember {
 		// 记住登录有效期两周
-		cache.TokenManager.Set(token, authorization, cache.RememberMeExpiration)
+		cache.TokenManager.Set(token, authorization, cache.NoExpiration)
 	} else {
-		cache.TokenManager.Set(token, authorization, cache.NotRememberExpiration)
+		cache.TokenManager.Set(token, authorization, cache.NoExpiration)
 	}
 
 	b := true

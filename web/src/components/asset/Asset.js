@@ -246,7 +246,7 @@ const Asset = () => {
                             href={url}
                             target='_blank'
                         >
-                            接入
+                            接入111
                         </a>
                     </Show>,
                     <Show menu={'asset-edit'} key={'asset-edit'}>

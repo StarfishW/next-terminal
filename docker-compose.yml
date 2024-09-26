@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  guacd:
+    image: dushixiang/guacd:latest
+    volumes:
+      - ./data:/usr/local/next-terminal/data
+    restart:
+      always
+  next-terminal:
+    image: dushixiang/next-terminal:latest
+    environment:
+      DB: mysql
+      MYSQL_HOSTNAME: 192.168.101.60
+      MYSQL_PORT: 3306
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: next-terminal
+      GUACD_HOSTNAME: guacd
+      GUACD_PORT: 4822
+    ports:
+      - "8088:8088"
+    volumes:
+      - ./localtime:/etc/localtime
+      - ./data:/usr/local/next-terminal/data
+    restart:
+      always

@@ -1,18 +1,18 @@
 debug: true
 demo: false
-db: sqlite
+db: mysql
 mysql:
-  hostname: localhost
+  hostname: 192.168.101.60
   port: 3306
-  username: next-terminal
-  password: next-terminal
+  username: root
+  password: root
   database: next-terminal
 sqlite:
   file: './data/sqlite/next-terminal.db'
 server:
   addr: 0.0.0.0:8088
 guacd:
-  hostname: 127.0.0.1
+  hostname: 192.168.101.66
   port: 4822
   # 此路径需要为绝对路径，并且next-terminal和guacd都能访问到
   recording: 'data/recording'

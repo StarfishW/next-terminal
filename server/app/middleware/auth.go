@@ -63,9 +63,9 @@ func Auth(next echo.HandlerFunc) echo.HandlerFunc {
 		if strings.EqualFold(nt.LoginToken, authorization.Type) {
 			if authorization.Remember {
 				// 记住登录有效期两周
-				cache.TokenManager.Set(token, authorization, cache.RememberMeExpiration)
+				cache.TokenManager.Set(token, authorization, cache.NoExpiration)
 			} else {
-				cache.TokenManager.Set(token, authorization, cache.NotRememberExpiration)
+				cache.TokenManager.Set(token, authorization, cache.NoExpiration)
 			}
 		}
 

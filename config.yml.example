@@ -1,10 +1,10 @@
 debug: false
-db: sqlite
+db: mysql
 mysql:
-  hostname: localhost
+  hostname: 192.168.101.60
   port: 3306
-  username: next-terminal
-  password: next-terminal
+  username: root
+  password: root
   database: next-terminal
 sqlite:
   file: './data/sqlite/next-terminal.db'
@@ -22,4 +22,3 @@ sshd:
   enable: true
   addr: 0.0.0.0:2022
   key: ~/.ssh/id_rsa
-  authorized-keys: ~/.ssh/authorized_keys
